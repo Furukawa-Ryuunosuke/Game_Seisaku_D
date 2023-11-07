@@ -1,74 +1,70 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PoltergeisScript : MonoBehaviour
 {
-    [SerializeField] GameObject player;
-    [SerializeField] float distance = 0.8f;    // 検出可能な距離
+    public GameObject PoltertextObject;
+    private bool isPlayerInside = false;
 
-    private Rigidbody rb;
+    [SerializeField] float moveSpeed = 5.0f;
+
+    private Playercontroller playerController;
+    private BoxCollider boxCollider;
+
+    private TextMeshProUGUI PoltertextComponent;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        PoltertextObject.SetActive(false);
+        PoltertextComponent = PoltertextObject.GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Rayはカメラの位置からとばす
-        var rayStartPosition = player.transform.position;
-        // Rayはカメラが向いてる方向にとばす
-        var rayDirection = player.transform.forward.normalized;
-
-        // Hitしたオブジェクト格納用
-        RaycastHit raycastHit;
-
-        // Rayを飛ばす（out raycastHit でHitしたオブジェクトを取得する）
-        var isHit = Physics.Raycast(rayStartPosition, rayDirection, out raycastHit, distance);
-
-        // Debug.DrawRay (Vector3 start(rayを開始する位置), Vector3 dir(rayの方向と長さ), Color color(ラインの色));
-        Debug.DrawRay(rayStartPosition, rayDirection * distance, Color.red);
-
-        // なにかを検出したら
-        if (isHit)
+        if (isPlayerInside)
         {
-           // Debug.Log("A");
-            // LogにHitしたオブジェクト名を出力
-            Debug.Log("HitObject : " + raycastHit.collider.gameObject.name);
-            if (raycastHit.collider.CompareTag("Vase"))
+            // プレイヤーがエリア内にいる場合の処理
+            if (Input.GetKeyDown(KeyCode.Z))
             {
-               // Debug.Log("B");
-                if (Input.GetKeyDown(KeyCode.Z))
-                {
-                   // Debug.Log("C");
-                    var vaseRb = raycastHit.collider.gameObject.GetComponent<Rigidbody>();
-                    if (vaseRb != null)
-                    {
-                        vaseRb.velocity = new Vector3(1f, 0, 0);
-                        //Debug.Log("aA");
-                    }
-                }
-
+                Poltergeist();
             }
-           /* else if (raycastHit.collider.CompareTag("Hide"))
+
+        }
+    }
+    void Poltergeist()
+    {
+        if (HideMode)
+        {
+            if (playerController != null)
             {
-               // Debug.Log("BB");
-                if (Input.GetKeyDown(KeyCode.Z))
-                {
-                    Transform hitTransform = raycastHit.transform;
-                    Debug.Log("HitObject's Transform: " + hitTransform.name);
+                playerController.enabled = false;
+            }
+            if (boxCollider != null)
+            {
+                boxCollider.isTrigger = true;
+            }
+            hidetextComponent.text = "Exit!!!!";
+            MoveToTarget(nowPoint.position, InSidePoint.position);
 
-                    BoxCollider boxCollider = raycastHit.collider.gameObject.GetComponent<BoxCollider>();
-                    if (boxCollider != null)
-                    {
-                        boxCollider.isTrigger = true;
-                    }
-                    GetComponent<Playercontroller>().enabled = false;
+        }
+        else
+        {
+            if (playerController != null)
+            {
+                playerController.enabled = true;
+            }
+            if (boxCollider != null)
+            {
+                boxCollider.isTrigger = false;
+            }
+            nowPoint.LookAt(OutSidePoint);
+            hidetextComponent.text = "Hide!!!!";
+            MoveToTarget(nowPoint.position, OutSidePoint.position);
 
-                }
-            }*/
         }
     }
 }
