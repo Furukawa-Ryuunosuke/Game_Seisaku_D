@@ -2784,7 +2784,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-72458
+  m_Name: pb_Mesh24750
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4707,12 +4707,16 @@ PrefabInstance:
       objectReference: {fileID: 382428553}
     - target: {fileID: 3470630834988298254, guid: 77d97c38d85cb234baf5c14864faa8df, type: 3}
       propertyPath: m_VersionIndex
-      value: 1625
+      value: 1640
       objectReference: {fileID: 0}
     - target: {fileID: 3510524909238027015, guid: 77d97c38d85cb234baf5c14864faa8df, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 382428553}
+    - target: {fileID: 3823751111937084061, guid: 77d97c38d85cb234baf5c14864faa8df, type: 3}
+      propertyPath: m_TagString
+      value: Pol
+      objectReference: {fileID: 0}
     - target: {fileID: 6233613049333289003, guid: 77d97c38d85cb234baf5c14864faa8df, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -20863,7 +20867,7 @@ PrefabInstance:
       objectReference: {fileID: 1613885778}
     - target: {fileID: 7370864167829120837, guid: 68ff95e6a77540c488b41a572ffa5436, type: 3}
       propertyPath: m_VersionIndex
-      value: 1529
+      value: 1532
       objectReference: {fileID: 0}
     - target: {fileID: 7370864167829120838, guid: 68ff95e6a77540c488b41a572ffa5436, type: 3}
       propertyPath: m_Mesh
@@ -22430,6 +22434,32 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &871856650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6758195112753253009, guid: 77d97c38d85cb234baf5c14864faa8df, type: 3}
+  m_PrefabInstance: {fileID: 559068145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &871856652
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871856650}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 127a3c4aba631184a951d7873c361a17, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!43 &910593003
 Mesh:
   m_ObjectHideFlags: 0
@@ -23213,6 +23243,7 @@ RectTransform:
   - {fileID: 1675190385}
   - {fileID: 1755285613}
   - {fileID: 1882667939}
+  - {fileID: 1145085227}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24564,6 +24595,141 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1145085226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1145085227}
+  - component: {fileID: 1145085229}
+  - component: {fileID: 1145085228}
+  m_Layer: 5
+  m_Name: PolterText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1145085227
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145085226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1005614350}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1145085228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145085226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: POLTER OK!!!!
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1145085229
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145085226}
+  m_CullTransparentMesh: 1
 --- !u!43 &1146837411
 Mesh:
   m_ObjectHideFlags: 0
@@ -28099,7 +28265,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5738
+  m_Name: pb_Mesh-3224
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -30071,7 +30237,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5768
+  m_Name: pb_Mesh-3246
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -30244,6 +30410,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1851100648}
+    - target: {fileID: 6509402657573291516, guid: 207fa8c6032b66040a9a19fe60d61685, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1511
+      objectReference: {fileID: 0}
     - target: {fileID: 6509402657573291519, guid: 207fa8c6032b66040a9a19fe60d61685, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -32067,6 +32237,14 @@ PrefabInstance:
       propertyPath: HidetextObject
       value: 
       objectReference: {fileID: 1675190384}
+    - target: {fileID: 9187912762387162178, guid: b1620ad2c8fa92a4187d033b343db147, type: 3}
+      propertyPath: animationClip
+      value: 
+      objectReference: {fileID: 1827226128182048838, guid: 7cfc64f4389d2fd4f89825a673a904ca, type: 3}
+    - target: {fileID: 9187912762387162178, guid: b1620ad2c8fa92a4187d033b343db147, type: 3}
+      propertyPath: PoltertextObject
+      value: 
+      objectReference: {fileID: 1145085226}
     - target: {fileID: 9187912762387162180, guid: b1620ad2c8fa92a4187d033b343db147, type: 3}
       propertyPath: m_Drag
       value: 50

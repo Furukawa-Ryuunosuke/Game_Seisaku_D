@@ -9,12 +9,13 @@ public class PoltergeisScript : MonoBehaviour
     public GameObject PoltertextObject;
     private bool isPlayerInside = false;
 
-    [SerializeField] float moveSpeed = 5.0f;
-
     private Playercontroller playerController;
     private BoxCollider boxCollider;
 
     private TextMeshProUGUI PoltertextComponent;
+
+    public Animator animator; // Animatorコンポーネントへの参照
+    public AnimationClip animationClip; // 再生させたいAnimationClip
     // Start is called before the first frame update
     void Start()
     {
@@ -37,34 +38,21 @@ public class PoltergeisScript : MonoBehaviour
     }
     void Poltergeist()
     {
-        if (HideMode)
-        {
-            if (playerController != null)
-            {
-                playerController.enabled = false;
-            }
-            if (boxCollider != null)
-            {
-                boxCollider.isTrigger = true;
-            }
-            hidetextComponent.text = "Exit!!!!";
-            MoveToTarget(nowPoint.position, InSidePoint.position);
+        animator.Play(animationClip.name);
+    }
 
-        }
-        else
+    private void OnTriggerStay(Collider col)
+    {
+        if (col.gameObject.tag == "Pol")
         {
-            if (playerController != null)
-            {
-                playerController.enabled = true;
-            }
-            if (boxCollider != null)
-            {
-                boxCollider.isTrigger = false;
-            }
-            nowPoint.LookAt(OutSidePoint);
-            hidetextComponent.text = "Hide!!!!";
-            MoveToTarget(nowPoint.position, OutSidePoint.position);
-
+            isPlayerInside = true;
+            PoltertextObject.SetActive(true);
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        isPlayerInside = false;
+        PoltertextObject.SetActive(false);
     }
 }

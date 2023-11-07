@@ -706,6 +706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6233613049333289003}
+  - component: {fileID: 5106528119053984759}
   m_Layer: 0
   m_Name: binn
   m_TagString: Untagged
@@ -734,6 +735,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &5106528119053984759
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6758195112753253009}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 1827226128182048838, guid: 7cfc64f4389d2fd4f89825a673a904ca, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &7475080322491765318
 GameObject:
   m_ObjectHideFlags: 0
