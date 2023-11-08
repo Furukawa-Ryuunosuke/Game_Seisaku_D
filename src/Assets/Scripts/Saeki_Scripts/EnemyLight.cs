@@ -6,7 +6,6 @@ public class EnemyLight : MonoBehaviour
 {
     public bool lightEnter;
 
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +24,11 @@ public class EnemyLight : MonoBehaviour
         {
             lightEnter = true;
             //Debug.Log("É_ÉÅÅ[ÉW");
-           
+            LifeScript life = other.GetComponent<LifeScript>();
+            if (life != null)
+            {
+                life.TakeDamage(1);
+            }
         }
     }
 
