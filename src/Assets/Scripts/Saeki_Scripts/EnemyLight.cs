@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyLight : MonoBehaviour
 {
     public bool lightEnter;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +23,9 @@ public class EnemyLight : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            lightEnter = true; 
+            lightEnter = true;
             //Debug.Log("É_ÉÅÅ[ÉW");
+           
         }
     }
 

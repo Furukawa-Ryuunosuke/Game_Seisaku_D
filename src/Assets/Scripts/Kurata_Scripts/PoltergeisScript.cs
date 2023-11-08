@@ -9,13 +9,11 @@ public class PoltergeisScript : MonoBehaviour
     public GameObject PoltertextObject;
     private bool isPlayerInside = false;
 
-    private Playercontroller playerController;
-    private BoxCollider boxCollider;
-
     private TextMeshProUGUI PoltertextComponent;
 
-    public Animator animator; // Animatorコンポーネントへの参照
-    public AnimationClip animationClip; // 再生させたいAnimationClip
+    private Animator parentAnimator;
+
+    private SphereCollider sphereCollider;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,14 +29,18 @@ public class PoltergeisScript : MonoBehaviour
             // プレイヤーがエリア内にいる場合の処理
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                Poltergeist();
+                if (parentAnimator != null)
+                {
+                    parentAnimator.SetBool("isFall", true);
+                    PoltertextObject.SetActive(false);
+                    if (sphereCollider != null)
+                    {
+                        sphereCollider.enabled = true;
+                    }
+                }
             }
 
         }
-    }
-    void Poltergeist()
-    {
-        animator.Play(animationClip.name);
     }
 
     private void OnTriggerStay(Collider col)
@@ -47,6 +49,17 @@ public class PoltergeisScript : MonoBehaviour
         {
             isPlayerInside = true;
             PoltertextObject.SetActive(true);
+
+            // 接触したオブジェクトの親オブジェクトを取得
+            Transform parentTransform = col.transform.parent;
+
+            // 親オブジェクトにアタッチされているAnimatorコンポーネントを取得
+            parentAnimator = parentTransform.GetComponent<Animator>();
+
+            Transform FallCpllider = parentTransform.GetChild(4);
+            Debug.Log(FallCpllider);
+            sphereCollider = FallCpllider.GetComponent<SphereCollider>();
+
         }
     }
 

@@ -19,11 +19,14 @@ public class HideScript : MonoBehaviour
     private BoxCollider boxCollider;
 
     private TextMeshProUGUI hidetextComponent;
+
+    private CapsuleCollider capsuleCollider;
     // Start is called before the first frame update
     void Start()
     {
         HidetextObject.SetActive(false);
         hidetextComponent = HidetextObject.GetComponent<TextMeshProUGUI>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
     }
 
     // Update is called once per frame
@@ -55,6 +58,7 @@ public class HideScript : MonoBehaviour
             {
                 boxCollider.isTrigger = true;
             }
+            capsuleCollider.enabled = false;
             hidetextComponent.text = "Exit!!!!";
             MoveToTarget(nowPoint.position, InSidePoint.position);
 
@@ -69,6 +73,7 @@ public class HideScript : MonoBehaviour
             {
                 boxCollider.isTrigger = false;
             }
+            capsuleCollider.enabled = true;
             nowPoint.LookAt(OutSidePoint);
             hidetextComponent.text = "Hide!!!!";
             MoveToTarget(nowPoint.position, OutSidePoint.position);
