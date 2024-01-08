@@ -11,7 +11,7 @@ public class LifeSliderScript : MonoBehaviour
 
     [SerializeField] public Slider slider;
 
-    public Image escapeImage;
+    //public Image escapeImage;
 
     [SerializeField] GameObject player;
     LifeScript _life;
@@ -35,7 +35,7 @@ public class LifeSliderScript : MonoBehaviour
 
         slider.value = 100;
         originalSliderValue = slider.value;
-        escapeImage.gameObject.SetActive(false);
+        //escapeImage.gameObject.SetActive(false);
         Damaged = false;
 
         _life = player.GetComponent<LifeScript>();
@@ -59,7 +59,7 @@ public class LifeSliderScript : MonoBehaviour
 
         if (AllEnter)
         {
-            escapeImage.gameObject.SetActive(true);
+            //escapeImage.gameObject.SetActive(true);
             Timecount += Time.deltaTime;
 
             float decreaseSpeed = 6f;
@@ -102,7 +102,7 @@ public class LifeSliderScript : MonoBehaviour
         {
             Damaged = false;
             Timecount = 0f;
-            escapeImage.gameObject.SetActive(false);
+            //escapeImage.gameObject.SetActive(false);
 
             if (slider.value < 1)
                 slider.value = 0;

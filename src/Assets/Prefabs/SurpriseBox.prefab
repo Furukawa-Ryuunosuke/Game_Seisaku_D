@@ -238,7 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyDelay: 7
   Surp_Interbal: 7
-  Surp_distanse: 3
+  Surp_distanse: 7
   SURP: 0
 --- !u!135 &6925557857177830245
 SphereCollider:
